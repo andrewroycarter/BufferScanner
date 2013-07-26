@@ -6,7 +6,7 @@
 //  Copyright (c) 2013 PinchStudios. All rights reserved.
 //
 
-#include "BufferScanner.h"
+#include "buffer_scanner.h"
 #include <stdio.h>
 #include <string.h>
 
