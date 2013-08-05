@@ -10,12 +10,16 @@
 #define test_BufferScanner_h
 
 typedef struct {
-    char delimiter;
-    char *buffer;
-    int position;
+    char delimiter; // char that seperates the string. ',' in "one,two,three"
+    char *buffer; // string to scan
+    int length; // length of string to scan
+    int position; // current position to scan from (starts at 0)
 } BufferScanner;
 
-void buffer_scanner_init(BufferScanner * const buffer_scanner, char *buffer, char delimiter);
-void buffer_scanner_scan_next_string(BufferScanner * const buffer_scanner, char * const string, int max_string_size);
+// sets up buffer scanner
+void buffer_scanner_init(BufferScanner *buffer_scanner, char *buffer, int length, char delimiter);
+
+// scans to next instance of delimiter, and writes the string scanned into string variable
+void buffer_scanner_scan_next_string(BufferScanner *buffer_scanner, char *string, int max_string_size);
 
 #endif
